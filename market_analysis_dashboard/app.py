@@ -81,8 +81,8 @@ if run_button:
     indicator_summary = latest_indicator_summary(model_df)
     naive_acc = baseline_accuracy(test_df)
 
-    overview_tab, indicators_tab, prediction_tab, evaluation_tab, advanced_tab, about_tab = st.tabs(
-        ["Overview", "Indicators", "Predictions", "Evaluation", "Advanced", "About"]
+    overview_tab, indicators_tab, prediction_tab, evaluation_tab, advanced_tab = st.tabs(
+        ["Overview", "Indicators", "Predictions", "Evaluation", "Advanced"]
     )
 
     with overview_tab:
@@ -186,41 +186,7 @@ if run_button:
             If you choose **Neural Network**, this acts as the app's more advanced model.
             It is included as an experimental extension, while the simpler models remain easier to explain and justify.
 
-            Good line for your presentation:
-
-            *"I kept simpler baseline models at the core of the system for interpretability, and added a neural network as an advanced comparison model."*
+        
             """
         )
 
-    with about_tab:
-        st.markdown(
-            """
-            ### Project summary
-
-            **Aim:**  
-            Build a stock market analysis dashboard that downloads historical stock data, calculates technical indicators, and predicts next-day market movement.
-
-            **Main features:**  
-            - Candlestick price chart
-            - Moving averages
-            - RSI and MACD
-            - Daily returns analysis
-            - Direction prediction
-            - Return prediction
-            - Evaluation metrics and confusion matrix
-
-            **Why this design is better for a presentation:**  
-            - More visually complete
-            - Easier to explain than a full trading platform
-            - Includes both core models and one advanced option
-            - Shows clear evidence of evaluation
-
-            **Limitations:**  
-            The system only uses historical market data and technical indicators. It does not include news, sentiment, macroeconomic events, or company fundamentals.
-
-            **Safe conclusion:**  
-            The app does not promise perfect prediction. It aims to identify useful short-term patterns in historical data and evaluate them properly.
-            """
-        )
-else:
-    st.info("Set your options in the sidebar and click **Run analysis**.")
